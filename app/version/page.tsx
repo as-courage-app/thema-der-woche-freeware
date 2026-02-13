@@ -12,38 +12,36 @@ export default function VersionPage() {
             Thema der Woche <span className="text-slate-600">(Edition 1)</span>
           </h1>
 
-          <div className="mt-2 text-sm text-slate-700">
-            Bitte wähle deine Version:
-          </div>
+          <div className="mt-2 text-sm text-slate-700">Bitte wähle deine Version:</div>
 
           {/* Feldtest-Hinweis (temporär) */}
-<div className="mt-4 rounded-2xl border border-slate-200 bg-white/85 p-4 text-sm text-slate-700 shadow-sm backdrop-blur">
-  <div className="font-semibold text-slate-900">Feldtest-Hinweis</div>
+          <div className="mt-4 rounded-2xl border border-slate-200 bg-white/85 p-4 text-sm text-slate-700 shadow-sm backdrop-blur">
+            <div className="font-semibold text-slate-900">Feldtest-Hinweis</div>
 
-  <p className="mt-2">
-    Danke fürs Testen! Bitte gib kurzes Feedback zu Bedienung, Darstellung und Inhalt.
-    Wenn etwas hakt: Screenshot machen, kurz beschreiben, fertig. 😊
-  </p>
+            <p className="mt-2">
+              Danke fürs Testen! Bitte gib kurzes Feedback zu Bedienung, Darstellung und Inhalt. Wenn etwas hakt:
+              Screenshot machen, kurz beschreiben, fertig. 😊
+            </p>
 
-  <div className="mt-3">
-    <a
-      href="https://forms.gle/5hVJ7qVBfsgSd1EBA"
-      target="_blank"
-      rel="noreferrer"
-      className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-slate-50"
-    >
-      Zum Auswertebogen (Google Formular)
-      <span aria-hidden="true">↗</span>
-    </a>
-  </div>
+            <div className="mt-3">
+              <a
+                href="https://forms.gle/5hVJ7qVBfsgSd1EBA"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-slate-50"
+              >
+                Zum Auswertebogen (Google Formular)
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
 
-  <p className="mt-2 text-xs text-slate-500">
-    (Dieser Hinweis ist nur vorübergehend und hat keine Auswirkung auf die Funktionen.)
-  </p>
-</div>
-
+            <p className="mt-2 text-xs text-slate-500">
+              (Dieser Hinweis ist nur vorübergehend und hat keine Auswirkung auf die Funktionen.)
+            </p>
+          </div>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            {/* Free bleibt normal klickbar */}
             <Link
               href="/free"
               className="block rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left shadow-sm transition hover:bg-slate-50"
@@ -52,13 +50,26 @@ export default function VersionPage() {
               <div className="mt-1 text-sm text-slate-700">kostenlos (dauerhaft)</div>
             </Link>
 
-            <Link
-              href="/full"
-              className="block rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left shadow-sm transition hover:bg-slate-50"
+            {/* Full bleibt sichtbar, aber deaktiviert */}
+            <div
+              className="block cursor-not-allowed rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left shadow-sm opacity-50"
+              aria-disabled="true"
+              title="In der Freeware ist Full deaktiviert."
             >
-              <div className="text-base font-semibold text-slate-900">Full</div>
-              <div className="mt-1 text-sm text-slate-700">mit Lizenz (nach Ende des Feldtests)</div>
-            </Link>
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <div className="text-base font-semibold text-slate-900">Full</div>
+                  <div className="mt-1 text-sm text-slate-700">deaktiviert in der Freeware</div>
+                </div>
+                <span className="rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold text-slate-700">
+                  nur Vorschau
+                </span>
+              </div>
+
+              <div className="mt-3 rounded-xl border border-slate-200 bg-slate-50 p-3 text-xs text-slate-700">
+                Für die vollständige Version (Lizenz) später bitte die Feldtest-/Kaufseite nutzen.
+              </div>
+            </div>
           </div>
         </section>
       </main>

@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import BackgroundLayout from '../../components/BackgroundLayout';
 
 const APP_MODE_KEY = 'as-courage.appMode.v1';
@@ -20,22 +19,26 @@ function readMode(): AppMode {
 }
 
 export default function StartPage() {
-  const router = useRouter();
   const [mode, setMode] = useState<AppMode>(null);
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    // ✅ Freeware-Variante: immer "free" sicherstellen (ohne /version-Umweg)
     const m = readMode();
-    setMode(m);
-    setReady(true);
 
-    // Wenn noch keine Version gewählt wurde, zurück zur Auswahl
-    if (m === null) router.replace('/version');
-  }, [router]);
+    if (m === null || m === 'full') {
+      try {
+        localStorage.setItem(APP_MODE_KEY, 'free');
+      } catch {}
+      setMode('free');
+    } else {
+      setMode(m);
+    }
+
+    setReady(true);
+  }, []);
 
   if (!ready || mode === null) return null;
-
-  const title = mode === 'free' ? 'Free-Version' : 'Full-Version';
 
   return (
     <BackgroundLayout>
@@ -46,7 +49,8 @@ export default function StartPage() {
           </h1>
 
           <div className="mt-2 text-sm text-slate-700">
-            <span className="font-semibold">{title}</span>
+            <span className="font-semibold">Free-Version</span>
+            <span className="ml-2 text-slate-500">• Freeware</span>
           </div>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -65,6 +69,34 @@ export default function StartPage() {
               <div className="text-base font-semibold text-slate-900">Setup starten</div>
               <div className="mt-1 text-sm text-slate-700">Wochenanzahl & Startdatum festlegen</div>
             </Link>
+          </div>
+
+          {/* ✅ Full sichtbar, aber deaktiviert */}
+          <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <div className="text-sm font-semibold text-slate-900">Full-Version (deaktiviert)</div>
+                <div className="mt-1 text-sm text-slate-600">
+                  In der Freeware ist die Full-Version sichtbar, aber nicht nutzbar.
+                </div>
+              </div>
+
+              <span className="rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold text-slate-700">
+                nur Vorschau
+              </span>
+            </div>
+
+            <div className="mt-3 grid gap-3 sm:grid-cols-2">
+              <div className="cursor-not-allowed rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left opacity-50">
+                <div className="text-base font-semibold text-slate-900">Full aktivieren</div>
+                <div className="mt-1 text-sm text-slate-700">Lizenz auswählen & freischalten</div>
+              </div>
+
+              <div className="cursor-not-allowed rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left opacity-50">
+                <div className="text-base font-semibold text-slate-900">Teamkalender / iCal</div>
+                <div className="mt-1 text-sm text-slate-700">nur in Full (C) verfügbar</div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
