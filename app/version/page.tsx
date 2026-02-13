@@ -42,13 +42,29 @@ export default function VersionPage() {
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {/* Free bleibt normal klickbar */}
-            <Link
-              href="/start"
-              className="block rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left shadow-sm transition hover:bg-slate-50"
-            >
-              <div className="text-base font-semibold text-slate-900">Free</div>
-              <div className="mt-1 text-sm text-slate-700">kostenlos (dauerhaft) und ohne Installation, browserbasiert für PC, Android und Apple</div>
-            </Link>
+    <Link
+  href="/start"
+  className="block rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left shadow-sm transition hover:bg-slate-50"
+>
+  <div className="flex items-start justify-between gap-3">
+    <div className="text-base font-semibold text-slate-900">Freeware</div>
+
+    <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
+      PC · Android · Apple
+    </span>
+  </div>
+
+  <div className="mt-3 text-sm text-slate-700">
+    <div className="font-semibold text-slate-900">Funktionsumfang:</div>
+    <ul className="mt-1 list-disc pl-5">
+      <li>alle 41 Wochenthemen sichtbar</li>
+      <li>4 von 41 Wochenthemen nutzbar</li>
+      <li>max. 2 Themen gleichzeitig auswählbar</li>
+      <li>Tagesimpulse (Mo–Fr) mit Bild aufrufbar</li>
+      <li>iCal downloadbar - auch bei Freeware</li>
+    </ul>
+  </div>
+</Link>
 
             {/* Full bleibt sichtbar, aber deaktiviert */}
             <div
