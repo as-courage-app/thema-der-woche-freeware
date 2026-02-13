@@ -12,15 +12,15 @@ export default function VersionPage() {
             Thema der Woche <span className="text-slate-600">(Edition 1)</span>
           </h1>
 
-          <div className="mt-2 text-sm text-slate-700">Bitte wähle deine Version:</div>
+          <div className="mt-2 text-sm text-slate-700">Freeware zum kostenlosen Testen der Kernfunktionen</div>
 
-          {/* Feldtest-Hinweis (temporär) */}
+          {/* Hinweis (temporär) */}
           <div className="mt-4 rounded-2xl border border-slate-200 bg-white/85 p-4 text-sm text-slate-700 shadow-sm backdrop-blur">
-            <div className="font-semibold text-slate-900">Feldtest-Hinweis</div>
+            <div className="font-semibold text-slate-900"> Hinweis</div>
 
             <p className="mt-2">
-              Danke fürs Testen! Bitte gib kurzes Feedback zu Bedienung, Darstellung und Inhalt. Wenn etwas hakt:
-              Screenshot machen, kurz beschreiben, fertig. 😊
+              Sie  können dauerhaft testen! Über ein kurzes Feedback zu Bedienung, Darstellung und Inhalt würde ich mich sehr freuen. 
+              Haben Sie Verbesserungsvorschläge? Dann einfach kurz beschreiben, fertig. 😊
             </p>
 
             <div className="mt-3">
@@ -36,7 +36,7 @@ export default function VersionPage() {
             </div>
 
             <p className="mt-2 text-xs text-slate-500">
-              (Dieser Hinweis ist nur vorübergehend und hat keine Auswirkung auf die Funktionen.)
+              Vielen Dank für Ihre Mitwirkung.
             </p>
           </div>
 
@@ -47,7 +47,7 @@ export default function VersionPage() {
               className="block rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left shadow-sm transition hover:bg-slate-50"
             >
               <div className="text-base font-semibold text-slate-900">Free</div>
-              <div className="mt-1 text-sm text-slate-700">kostenlos (dauerhaft)</div>
+              <div className="mt-1 text-sm text-slate-700">kostenlos (dauerhaft) und ohne Installation, browserbasiert für PC, Android und Apple</div>
             </Link>
 
             {/* Full bleibt sichtbar, aber deaktiviert */}
