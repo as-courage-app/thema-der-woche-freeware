@@ -43,7 +43,7 @@ export default function VersionPage() {
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {/* Free bleibt normal klickbar */}
             <Link
-              href="/free"
+              href="/start"
               className="block rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left shadow-sm transition hover:bg-slate-50"
             >
               <div className="text-base font-semibold text-slate-900">Free</div>
