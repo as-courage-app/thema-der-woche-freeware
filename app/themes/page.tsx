@@ -441,6 +441,14 @@ const next = Number.isFinite(n) ? Math.min(upper, Math.max(1, n)) : 1;
   genutzt löschen
 </button>
 
+<button
+  type="button"
+  onClick={onContinue}
+  className="rounded-2xl bg-slate-900 px-5 py-2.5 text-sm font-medium text-white hover:opacity-90"
+>
+  Weiter
+</button>
+
               <div className="ml-auto text-sm text-black sm:text-slate-700">
                 Ausgewählt: <span className="font-semibold">{selectedThemes.length}</span> / {weeksCount}
               </div>
