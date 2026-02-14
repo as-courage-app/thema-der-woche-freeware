@@ -23,17 +23,26 @@ export default function VersionPage() {
               Haben Sie Verbesserungsvorschläge? Dann einfach kurz beschreiben, fertig. 😊
             </p>
 
-            <div className="mt-3">
-              <a
-                href="https://forms.gle/5hVJ7qVBfsgSd1EBA"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-slate-50"
-              >
-                Zum Auswertebogen (Google Formular)
-                <span aria-hidden="true">↗</span>
-              </a>
-            </div>
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+  <a
+    href="https://forms.gle/5hVJ7qVBfsgSd1EBA"
+    target="_blank"
+    rel="noreferrer"
+    className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-slate-50"
+  >
+    Zum Auswertebogen (Google Formular)
+    <span aria-hidden="true">↗</span>
+  </a>
+
+  <a
+    href="mailto:kontakt@as-courage.de?subject=Thema%20der%20Woche%20%E2%80%93%20Vollversion%20anfragen"
+    className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-slate-50"
+    title="E-Mail öffnen"
+  >
+    E-Mail für Anfragen zur Vollversion
+    <span aria-hidden="true">✉</span>
+  </a>
+</div>
 
             <p className="mt-2 text-xs text-slate-500">
               Vielen Dank für Ihre Mitwirkung.
@@ -63,7 +72,7 @@ export default function VersionPage() {
       <li>max. 2 Themen gleichzeitig auswählbar</li>
       <li>Kennzeichnung der genutzten Themen</li>
       <li>alle 4 Themen wiederverwendbar</li>
-      <li>Startdatum festlegen (jeweils Montags)</li>
+      <li>Startdatum festlegbar (jeweils Montags)</li>
       <li>20 Tagesimpulse (Mo–Fr) anwählbar</li>
     </ul>
   </div>
@@ -78,7 +87,7 @@ export default function VersionPage() {
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <div className="text-base font-semibold text-slate-900">Vollversion (Lizenz)</div>
-                  <div className="mt-1 text-sm text-slate-700">deaktiviert in der kostenlosen Version</div>
+                  <div className="mt-1 text-sm text-slate-700">deaktiviert in der kostenlosen Version - Anfragen zur Vollversion vorerst per E-Mail</div>
                 </div>
                 <span className="rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold text-slate-700">
                   Vorschau
@@ -90,7 +99,7 @@ export default function VersionPage() {
                 <ul className="mt-2 list-disc space-y-1 pl-5">
                   <li>Alle Inhalte: 41 Wochen-Themen, Bilder, Zitate und 205 Tagesimpulse</li>
                   <li>Freie Themenwahl manuell oder per Zufall</li>
-                  <li>Startdatum festlegen (Wochenstart jeweils am Montag)</li>
+                  <li>Startdatum festlegbar (Wochenstart jeweils am Montag)</li>
                   <li>Bereits genutzte Wochen-Themen werden gekennzeichnet</li>
                   <li>Gekennzeichneten Themen sind wiederverwendbar</li>
                   <li>Team-/Kalenderfunktionen (z.&nbsp;B. iCal) je nach Lizenz</li>
