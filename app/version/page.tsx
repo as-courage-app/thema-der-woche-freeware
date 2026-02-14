@@ -12,14 +12,14 @@ export default function VersionPage() {
             Thema der Woche <span className="text-slate-600">(Edition 1)</span>
           </h1>
 
-          <div className="mt-2 text-sm text-slate-700">Freeware zum kostenlosen Testen der Kernfunktionen</div>
+          <div className="mt-2 text-sm text-slate-700">Kostenlose Version zum Testen der Kernfunktionen</div>
 
           {/* Hinweis (temporär) */}
           <div className="mt-4 rounded-2xl border border-slate-200 bg-white/85 p-4 text-sm text-slate-700 shadow-sm backdrop-blur">
             <div className="font-semibold text-slate-900"> Hinweis</div>
 
             <p className="mt-2">
-              Sie  können dauerhaft testen! Über ein kurzes Feedback zu Bedienung, Darstellung und Inhalt würde ich mich sehr freuen. 
+              Sie  können dauerhaft testen! Über ein kurzes Feedback zu Bedienung, Darstellung und Inhalten würde ich mich sehr freuen. 
               Haben Sie Verbesserungsvorschläge? Dann einfach kurz beschreiben, fertig. 😊
             </p>
 
@@ -47,7 +47,7 @@ export default function VersionPage() {
   className="block rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left shadow-sm transition hover:bg-slate-50"
 >
   <div className="flex items-start justify-between gap-3">
-    <div className="text-base font-semibold text-slate-900">Freeware</div>
+    <div className="text-base font-semibold text-slate-900">Kostenlose Version</div>
 
     <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
       PC · Android · Apple
@@ -58,10 +58,13 @@ export default function VersionPage() {
     <div className="font-semibold text-slate-900">Funktionsumfang:</div>
     <ul className="mt-1 list-disc pl-5">
       <li>alle 41 Wochenthemen sichtbar</li>
-      <li>4 von 41 Wochenthemen nutzbar</li>
+      <li>4 von 41 Wochenthemen zur Auswahl</li>
+      <li>4 von 41 Zitaten und Bildern sichtbar</li>
       <li>max. 2 Themen gleichzeitig auswählbar</li>
-      <li>Tagesimpulse (Mo–Fr) mit Bild aufrufbar</li>
-      <li>iCal downloadbar - auch bei Freeware</li>
+      <li>Kennzeichnung der genutzten Themen</li>
+      <li>alle 4 Themen wiederverwendbar</li>
+      <li>Startdatum festlegen (jeweils Montags)</li>
+      <li>20 Tagesimpulse (Mo–Fr) anwählbar</li>
     </ul>
   </div>
 </Link>
@@ -74,16 +77,24 @@ export default function VersionPage() {
             >
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  <div className="text-base font-semibold text-slate-900">Full</div>
-                  <div className="mt-1 text-sm text-slate-700">deaktiviert in der Freeware</div>
+                  <div className="text-base font-semibold text-slate-900">Vollversion (Lizenz)</div>
+                  <div className="mt-1 text-sm text-slate-700">deaktiviert in der kostenlosen Version</div>
                 </div>
                 <span className="rounded-full bg-slate-200 px-3 py-1 text-xs font-semibold text-slate-700">
-                  nur Vorschau
+                  Vorschau
                 </span>
               </div>
 
-              <div className="mt-3 rounded-xl border border-slate-200 bg-slate-50 p-3 text-xs text-slate-700">
-                Für die vollständige Version (Lizenz) später bitte die Feldtest-/Kaufseite nutzen.
+                            <div className="mt-3 text-sm text-slate-700">
+                <div className="font-semibold">Funktionsumfang (Vollversion)</div>
+                <ul className="mt-2 list-disc space-y-1 pl-5">
+                  <li>Alle Inhalte: 41 Wochen-Themen, Bilder, Zitate und 205 Tagesimpulse</li>
+                  <li>Freie Themenwahl manuell oder per Zufall</li>
+                  <li>Startdatum festlegen (Wochenstart jeweils am Montag)</li>
+                  <li>Bereits genutzte Wochen-Themen werden gekennzeichnet</li>
+                  <li>Gekennzeichneten Themen sind wiederverwendbar</li>
+                  <li>Team-/Kalenderfunktionen (z.&nbsp;B. iCal) je nach Lizenz</li>
+                </ul>
               </div>
             </div>
           </div>

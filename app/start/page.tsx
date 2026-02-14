@@ -49,8 +49,8 @@ export default function StartPage() {
           </h1>
 
           <div className="mt-2 text-sm text-slate-700">
-            <span className="font-semibold">Free-Version</span>
-            <span className="ml-2 text-slate-500">• Freeware</span>
+            <span className="font-semibold">Kostenlose Version</span>
+            <span className="ml-2 text-slate-500">• ohne Anmeldung</span>
           </div>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -71,13 +71,13 @@ export default function StartPage() {
             </Link>
           </div>
 
-          {/* ✅ Full sichtbar, aber deaktiviert */}
+          {/* ✅ Vollversion sichtbar, aber deaktiviert */}
           <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-4">
             <div className="flex items-start justify-between gap-3">
               <div>
-                <div className="text-sm font-semibold text-slate-900">Full-Version (deaktiviert)</div>
+                <div className="text-sm font-semibold text-slate-900">Vollversion (deaktiviert)</div>
                 <div className="mt-1 text-sm text-slate-600">
-                  In der Freeware ist die Full-Version sichtbar, aber nicht nutzbar.
+                  In der kostenlosen Version ist die Vollversion sichtbar, aber nicht nutzbar.
                 </div>
               </div>
 
@@ -88,13 +88,13 @@ export default function StartPage() {
 
             <div className="mt-3 grid gap-3 sm:grid-cols-2">
               <div className="cursor-not-allowed rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left opacity-50">
-                <div className="text-base font-semibold text-slate-900">Full aktivieren</div>
-                <div className="mt-1 text-sm text-slate-700">Lizenz auswählen & freischalten</div>
+                <div className="text-base font-semibold text-slate-900">Vollversion freischalten</div>
+                <div className="mt-1 text-sm text-slate-700">Lizenz auswählen & aktivieren</div>
               </div>
 
               <div className="cursor-not-allowed rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left opacity-50">
                 <div className="text-base font-semibold text-slate-900">Teamkalender / iCal</div>
-                <div className="mt-1 text-sm text-slate-700">nur in Full (C) verfügbar</div>
+                <div className="mt-1 text-sm text-slate-700">je nach Lizenz verfügbar</div>
               </div>
             </div>
           </div>
