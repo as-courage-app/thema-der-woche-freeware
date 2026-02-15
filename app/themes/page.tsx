@@ -419,7 +419,7 @@ export default function ThemesPage() {
               </div>
 
               <div className="rounded-xl border border-slate-200 bg-white p-3 text-black sm:text-slate-800">
-                <label className="block text-sm font-medium text-slate-800">Start (ausschließlich Montag)</label>
+                <label className="block text-sm font-medium text-slate-800">Start (bitte  Montag starten)</label>
                 <input
                   type="date"
                   value={startMonday}
