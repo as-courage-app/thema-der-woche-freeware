@@ -70,10 +70,12 @@ export default function VersionPage() {
       <li>4 von 41 Wochenthemen zur Auswahl</li>
       <li>4 von 41 Zitaten und Bildern sichtbar</li>
       <li>max. 2 Themen gleichzeitig auswählbar</li>
+      <li>Reihenfolge der Themen veränderbar</li>
       <li>Kennzeichnung der genutzten Themen</li>
       <li>alle 4 Themen wiederverwendbar</li>
       <li>Startdatum festlegbar (jeweils Montags)</li>
       <li>20 Tagesimpulse (Mo–Fr) anwählbar</li>
+      <li>Team-/Kalenderfunktionen (iCal)</li>
     </ul>
   </div>
 </Link>
@@ -99,6 +101,7 @@ export default function VersionPage() {
                 <ul className="mt-2 list-disc space-y-1 pl-5">
                   <li>Alle Inhalte: 41 Wochen-Themen, Bilder, Zitate und 205 Tagesimpulse</li>
                   <li>Freie Themenwahl manuell oder per Zufall</li>
+                  <li>Reihenfolge aller Themen frei veränderbar</li>
                   <li>Startdatum festlegbar (Wochenstart jeweils am Montag)</li>
                   <li>Bereits genutzte Wochen-Themen werden gekennzeichnet</li>
                   <li>Gekennzeichneten Themen sind wiederverwendbar</li>
