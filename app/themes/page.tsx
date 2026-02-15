@@ -119,7 +119,7 @@ export default function ThemesPage() {
   }, []);
 
   const [mode, setMode] = useState<Mode>('manual');
-  const [weeksCount, setWeeksCount] = useState<number>(4);
+  const [weeksCount, setWeeksCount] = useState<number>(2);
   const [startMonday, setStartMonday] = useState<string>(nextMondayISO());
 
   const [error, setError] = useState<string | null>(null);
@@ -468,7 +468,7 @@ const next = Number.isFinite(n) ? Math.min(upper, Math.max(1, n)) : 1;
                   {mode === 'manual'
                     ? canSelectMore
                       ? 'Du kannst noch auswählen.'
-                      : 'Genug ausgewählt (weitere Auswahl deaktiviert).'
+                      : 'Auswahl voständig (weitere Auswahl deaktiviert).'
                     : 'In Zufall: Auswahl wird durch Ziehung gesetzt, ist aber weiterhin änderbar.'}
                 </div>
               </div>
@@ -511,7 +511,7 @@ const next = Number.isFinite(n) ? Math.min(upper, Math.max(1, n)) : 1;
   <img
     src={`/images/themes/${t.id}.jpg`}
     alt=""
-    className="h-10 w-10 rounded-lg object-cover bg-slate-100"
+    className="h-10 w-16 rounded-lg object-cover bg-slate-100"
     onError={(e) => {
       (e.currentTarget as HTMLImageElement).src = '/images/demo.jpg';
     }}
@@ -526,9 +526,13 @@ const next = Number.isFinite(n) ? Math.min(upper, Math.max(1, n)) : 1;
                                 </span>
                               )}
                               {isSelected && (
-                                <span className="rounded-full border border-white/30 bg-white/10 px-2 py-0.5 text-xs text-white">
-                                  gewählt
-                                </span>
+                                <span
+  className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-2 py-0.5 text-xs text-white"
+  aria-label="gewählt"
+  title="gewählt"
+>
+  ✓
+</span>
                               )}
                             </div>
                           </div>
