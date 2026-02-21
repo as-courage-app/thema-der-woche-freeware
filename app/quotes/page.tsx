@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import BackgroundLayout from '../../components/BackgroundLayout';
 import edition1 from '../data/edition1.json';
 import Link from 'next/link';
+import { podcastEpisodes } from "@/lib/podcastEpisodes";
+import PodcastMiniPlayer from "@/components/PodcastMiniPlayer";
 
 const LS_SETUP = 'as-courage.themeSetup.v1';
 
@@ -243,6 +245,7 @@ export default function QuotesPage() {
   const [setup, setSetup] = useState<SetupState | null>(null);
   const [activeDay, setActiveDay] = useState<Record<string, number>>({});
   const [pageIndex, setPageIndex] = useState<number>(0);
+  const [showPodcast, setShowPodcast] = useState(false);
 
   // Fallback: wenn themes/<id>.jpg fehlt -> demo.jpg
   const [imgFallbackToDemo, setImgFallbackToDemo] = useState<boolean>(false);
@@ -262,6 +265,7 @@ export default function QuotesPage() {
     setActiveDay(initialDays);
 
     setPageIndex(0);
+    setShowPodcast(false);
     setImgFallbackToDemo(false);
   }, []);
 
@@ -307,14 +311,16 @@ export default function QuotesPage() {
   const canNext = clampedIndex < totalPages - 1;
 
   function goPrev() {
-    setPageIndex((p) => Math.max(0, p - 1));
-    setImgFallbackToDemo(false);
-  }
+  setPageIndex((p) => Math.max(0, p - 1));
+  setShowPodcast(false);
+  setImgFallbackToDemo(false);
+}
 
-  function goNext() {
-    setPageIndex((p) => Math.min(Math.max(0, totalPages - 1), p + 1));
-    setImgFallbackToDemo(false);
-  }
+ function goNext() {
+  setPageIndex((p) => Math.min(Math.max(0, totalPages - 1), p + 1));
+  setShowPodcast(false);
+  setImgFallbackToDemo(false);
+}
 
   const imageSrc = useMemo(() => {
     if (!current) return '/images/demo.jpg';
@@ -323,6 +329,20 @@ export default function QuotesPage() {
   }, [current, imgFallbackToDemo]);
 
   const currentTitle = current ? displayTitle(current) : '';
+  console.log("DEBUG currentTitle:", currentTitle, "current:", current);
+
+  // Podcast-Folge passend zur aktuellen Seite (Seite 1 -> Thema 1, usw.)
+// Podcast-Folge passend zur Themennummer aus current.id, z. B. "ed1-02-belastung" -> 2
+const currentThemeNumber: number | null = (() => {
+  const id = String(current?.id ?? "");
+  const m = id.match(/-(\d{1,2})-/); // nimmt "02" aus "ed1-02-belastung"
+  return m ? parseInt(m[1], 10) : null;
+})();
+
+const currentEpisode =
+  currentThemeNumber != null
+    ? podcastEpisodes.find((ep) => ep.themeNumber === currentThemeNumber) ?? null
+    : null;
 
   // ✅ Button nur bei C + iCal-Haken (robust: alter/neuer Feldname)
   const showIcalButton = useMemo(() => {
@@ -344,6 +364,7 @@ export default function QuotesPage() {
     (Edition 1)
   </span>
 </h1>
+
               </div>
 
               <div className="flex w-full items-center justify-between gap-2 sm:w-auto">
@@ -415,6 +436,20 @@ export default function QuotesPage() {
                 Weiter
               </button>
 
+              {showPodcast && currentEpisode && (
+  <PodcastMiniPlayer src={currentEpisode.audioSrc} title={currentEpisode.title} />
+)}
+
+{currentEpisode && (
+  <button
+    type="button"
+    onClick={() => setShowPodcast((v) => !v)}
+    className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-800 shadow-sm transition hover:bg-slate-50 cursor-pointer"
+    title="Podcast zur aktuellen Woche"
+  >
+    🎧 Podcast
+  </button>
+)}
               <div className="ml-auto text-sm text-slate-700">
                 {totalPages > 0 ? (
                   <>
